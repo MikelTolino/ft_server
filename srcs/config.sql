@@ -1,7 +1,4 @@
-CREATE DATABASE WordPress CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-
-GRANT ALL ON WordPress.* TO WordPressUser @'localhost' IDENTIFIED BY 'tu contraseña';
-
+CREATE DATABASE wordpress;
+GRANT ALL PRIVILEGES ON wordpress.* TO 'root'@'localhost';
 FLUSH PRIVILEGES;
-
-EXIT;
+update mysql.user set plugin = 'mysql_native_password' where user='root';

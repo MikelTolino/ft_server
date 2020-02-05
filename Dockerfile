@@ -6,16 +6,21 @@ RUN apt update && \
 	php-fpm \
 	php-mysql \
 	php-mbstring \
-	openssl \
-	curl
+	openssl
 
 COPY	srcs/wordpress /var/www/wordpress/
-COPY	srcs/phpMyAdmin-4.9.4-all-languages /var/www/phpMyAdmin/
-COPY	srcs/ft_server.com /etc/nginx/sites-avalibles/
-#COPY	srcs/config.sql   
-RUN		ln -s /etc/nginx/sites-available/ft_server.com /etc/nginx/sites-enabled/
+COPY	srcs/phpMyAdmin-4.9.4-all-languages/* /var/www/phpMyAdmin/
+COPY	srcs/default  /etc/nginx/sites-avalibles/
+COPY	srcs/config.sql  /home/
 
+#RUN	chown -R www-data:www-data /var/www/* && \
+#	chmod -R 755 /var/www/* 
+RUN		service mysql start && \
+		mysql -u root --password= < /home/config.sql
 
-#CMD service nginx start && \
-#	service mysql start && \
-#	bash
+EXPOSE 80
+
+CMD service nginx start && \
+	service mysql start && \
+	service php-fpm start && \
+	bash
