@@ -1,10 +1,9 @@
-
 server {
 
 	listen 80;
 	listen [::]:80;
 
-	root /var/www/wordpress;
+	root /var/www;
 
 	index index.html index.htm index.nginx-debian.html index.php;
 

@@ -10,19 +10,16 @@ RUN apt update && \
 	openssl
 
 COPY	srcs/wordpress /var/www/wordpress/
-COPY	srcs/phpMyAdmin-4.9.4-all-languages/* /var/www/phpMyAdmin/
-COPY	srcs/config.inc.php	/var/www/phpMyAdmin/
-COPY	srcs/default  /etc/nginx/sites-avalibles/
+COPY	srcs/phpMyAdmin-4.9.4-all-languages/* /var/www/phpmyadmin/
+COPY	srcs/config.inc.php	/var/www/phpmyadmin/
+COPY	srcs/default  /etc/nginx/sites-available/
 COPY	srcs/config.sql  /tmp/
-COPY	srcs/wordpress.sql /tmp/
 
 RUN	chown -R www-data:www-data /var/www/* && \
 	chmod -R 755 /var/www/*
-#	ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
-RUN		service mysql start && \
-		mysql -u root --password= < /tmp/config.sql && \
-		mysql wordpress -u root --password= < /tmp/wordpress.sql
 
+RUN		service mysql start && \
+		mysql -u root --password= < /tmp/config.sql
 
 CMD service nginx start && \
 	service mysql start && \
