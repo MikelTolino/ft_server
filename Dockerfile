@@ -11,7 +11,7 @@ RUN apt update && \
 	wget
 
 COPY	srcs/wordpress /var/www/html/wordpress/
-COPY	srcs/phpMyAdmin-4.9.4-all-languages/* /var/www/html/phpmyadmin/
+COPY	srcs/phpMyAdmin-5.0.1-all-languages/ /var/www/html/phpmyadmin/
 COPY	srcs/config.inc.php	/var/www/html/phpmyadmin/
 COPY	srcs/default  /etc/nginx/sites-available/
 COPY	srcs/config.sql  /tmp/
