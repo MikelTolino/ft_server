@@ -1,3 +1,24 @@
 # ft_server
-I sat up my first web server using Docker
 
+This project is based on creating a Docker image that it will install a complete web server. This server will run
+multiples services: Wordpress, phpMyAdmin, and a SQL database.
+
+## Description
+
+**OS**
+
+debian:buster
+
+**Server**
+
+Nginx
+
+**Services**
+
+1. Wordpress
+2. phpMyAdmin
+3. SQL database
+
+**Security**
+
+SSL Protocol
