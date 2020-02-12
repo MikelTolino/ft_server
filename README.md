@@ -5,7 +5,7 @@ multiples services: Wordpress, phpMyAdmin, and a SQL database.
 
 ## Description
 
-**OS**
+### OS
 
 debian:buster
 
