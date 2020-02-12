@@ -9,16 +9,16 @@ multiples services: Wordpress, phpMyAdmin, and a SQL database.
 
 debian:buster
 
-**Server**
+### Server
 
 Nginx
 
-**Services**
+### Services
 
 1. Wordpress
 2. phpMyAdmin
 3. SQL database
 
-**Security**
+### Security
 
 SSL Protocol
