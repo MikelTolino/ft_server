@@ -1,6 +1,8 @@
 # ft_server
 
-This project is based on creating a Docker image that it will install a complete web server. This server will run
+This project is based on creating a Docker image.
+
+We will install a complete web server. This server will run
 multiples services: Wordpress, phpMyAdmin, and a SQL database.
 
 ## Description
@@ -30,3 +32,5 @@ SSL Protocol
 2) Create image : `docker build .`
 
 3) Run container : `docker run -it ID`
+
+___
