@@ -15,12 +15,14 @@ COPY	srcs/phpMyAdmin-5.0.1-all-languages/ /var/www/html/phpmyadmin/
 COPY	srcs/config.inc.php	/var/www/html/phpmyadmin/
 COPY	srcs/default  /etc/nginx/sites-available/
 COPY	srcs/config.sql  /tmp/
+COPY	srcs/wordpress.sql  /tmp/
 
 RUN	chown -R www-data:www-data /var/www/* && \
 	chmod -R 755 /var/www/*
 
 RUN		service mysql start && \
-	mysql -u root --password= < /tmp/config.sql
+		mysql -u root --password= < /tmp/config.sql && \
+		mysql wordpress -u root --password= < /tmp/wordpress.sql
 
 RUN mkdir ~/mkcert && \
 	cd ~/mkcert && \
