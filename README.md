@@ -13,12 +13,20 @@ debian:buster
 
 Nginx
 
-### Services
+### Services
 
-1. Wordpress
-2. phpMyAdmin
-3. SQL database
+1) Wordpress
+2) phpMyAdmin
+3) SQL database
 
 ### Security
 
 SSL Protocol
+
+## Installation
+
+1) At first you must have install **Docker**
+
+2) Create image : `docker build .``
+
+3) Run container : `docker run -it ID
