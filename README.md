@@ -27,6 +27,6 @@ SSL Protocol
 
 1) At first you must have install **Docker**
 
-2) Create image : `docker build .``
+2) Create image : `docker build .`
 
-3) Run container : `docker run -it ID
+3) Run container : `docker run -it ID`
